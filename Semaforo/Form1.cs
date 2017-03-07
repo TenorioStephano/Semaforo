@@ -34,16 +34,53 @@ namespace Semaforo
                     EscondeImgs();
                     imgRed.Visible = true;
                     return "Pare";
+                case 4:
+                    EscondeImgs();
+                    imgRed.Visible = true;
+                    return "Pare";
                 default:
                     return "Erro";
             }
         }
+
+        public string SetImg2(int i)
+        {
+            switch(i)
+            {
+                case 1:
+                    EscondeImgs2();
+                    imgRed2.Visible = true;
+                    return "Pare";
+                case 2:
+                    EscondeImgs2();
+                    imgRed2.Visible = true;
+                    return "Pare";
+                case 3:
+                    EscondeImgs2();
+                    imgGreen2.Visible = true;
+                    return "Livre";
+                case 4:
+                    EscondeImgs2();
+                    imgYellow2.Visible = true;
+                    return "Atenção";
+                default:
+                    return "Erro";
+            }
+        }
+
 
         public void EscondeImgs()
         {
             imgGreen.Visible = false;
             imgRed.Visible = false;
             imgYellow.Visible = false;
+        }
+
+        public void EscondeImgs2()
+        {
+            imgGreen2.Visible = false;
+            imgRed2.Visible = false;
+            imgYellow2.Visible = false;
         }
 
         private bool inicio;
@@ -67,8 +104,9 @@ namespace Semaforo
             else
             {
                 lblEstado.Text = SetImg(i);
+                lblEstado2.Text = SetImg2(i);
                 i++;
-                if(i > 3)
+                if(i > 4)
                     i = 1;
             }
         }
